@@ -1,0 +1,67 @@
+div {
+  width: 100%;
+}
+table {
+  margin: 20px auto 0 auto;
+}
+td {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  border: 5px solid orangered;
+}
+td.blue {
+  border: 5px solid royalblue;
+}
+td.green {
+  border: 5px solid forestgreen;
+}
+td.empty {
+  border: 0 none;
+  font-size: 5em;
+}
+td.score {
+  width: 200px;
+  height: auto;
+  vertical-align: top;
+  border: 0 none;
+}
+td.score.current {
+  background-color: beige;
+}
+td.extra {
+  background-color: pink;
+}
+td.available {
+  animation: pulse 1s infinite;
+  cursor: pointer;
+}
+button {
+  padding: 20px;
+}
+h1.roll {
+  font-size: 3em;
+}
+div.pawn {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  margin: auto;
+}
+div.pawn.blue {
+  background-color: royalblue;
+}
+div.pawn.green {
+  background-color: forestgreen;
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0,255,0, 1), inset 0 0 10px 10px rgba(0,255,0, .3);
+  }
+  50% {
+    box-shadow: 0 0 10px 20px rgba(0,255,0, .3), inset 0 0 0 0 rgba(0,255,0, 1);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0,255,0, 1), inset 0 0 10px 10px rgba(0,255,0, .3);
+  }
+}
