@@ -5,7 +5,10 @@ import {AWAITS_ROLL, SELECTS_PAWN} from '../reducers/players'
 import {mapField, mapIndex, nextPlayer} from "../App";
 
 const newRoll = (dispatch, players, currentPlayer) => {
-    const rollResult = Math.floor(Math.random() * 5)
+    const rollResult = Math.floor(Math.random() * 2)
+        + Math.floor(Math.random() * 2)
+        + Math.floor(Math.random() * 2)
+        + Math.floor(Math.random() * 2);
 
     dispatch(roll(rollResult))
 
