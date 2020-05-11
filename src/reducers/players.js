@@ -79,7 +79,7 @@ const playersReducer = (state = initialState, action) => {
             return {
                 blue: {
                     saved: 0,
-                    inGame: 1,
+                    inGame: 7,
                     info: '',
                     state: AWAITS_ROLL,
                     moves: [],
@@ -87,7 +87,7 @@ const playersReducer = (state = initialState, action) => {
                 },
                 green: {
                     saved: 0,
-                    inGame: 1,
+                    inGame: 7,
                     info: '',
                     state: AWAITS_ROLL,
                     moves: [],
