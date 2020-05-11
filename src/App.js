@@ -88,6 +88,7 @@ function App() {
                 </tr>
                 </tbody>
             </table>
+            <a href="https://en.wikipedia.org/wiki/Royal_Game_of_Ur" target="_blank">Royal Game of Ur at Wiki</a>
         </div>
     );
 }
