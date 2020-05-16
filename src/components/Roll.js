@@ -13,13 +13,13 @@ const newRoll = (dispatch, players, currentPlayer) => {
     dispatch(roll(rollResult))
 
     if (rollResult === 0) {
-        dispatch(setInfo(currentPlayer, 'Losing Turn'))
+        dispatch(setInfo(currentPlayer, 'Rolled 0|Losing Turn'))
         nextPlayer(dispatch, currentPlayer)
     } else {
         if (players[currentPlayer].pawns.length === 0) {
             dispatch(addPawn(currentPlayer, mapField(rollResult, currentPlayer)))
             if (rollResult === 4) {
-                dispatch(setInfo(currentPlayer, 'Extra Turn'))
+                dispatch(setInfo(currentPlayer, 'Special Field|Extra Turn'))
                 dispatch(resetRoll())
             } else {
                 nextPlayer(dispatch, currentPlayer)

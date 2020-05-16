@@ -29,7 +29,7 @@ const shiftPawn = (dispatch, players, player, from, to) => {
 
         dispatch(movePawn(player, from, mapField(to, player)))
         if ([4, 8, 13].includes(to)) {
-            dispatch(setInfo(player, 'Extra Turn'))
+            dispatch(setInfo(player, 'Special Field|Extra Turn'))
             dispatch(resetRoll())
         } else {
             nextPlayer(dispatch, player)
@@ -41,7 +41,7 @@ const plusPawn = (dispatch, player, target) => {
     dispatch(changeState(player, AWAITS_ROLL))
     dispatch(addPawn(player, mapField(target, player)))
     if (target === 4) {
-        dispatch(setInfo(player, 'Extra Turn'))
+        dispatch(setInfo(player, 'Special Field|Extra Turn'))
         dispatch(resetRoll())
     } else {
         nextPlayer(dispatch, player)

@@ -38,7 +38,6 @@ const playersReducer = (state = initialState, action) => {
         case SAVE:
             playerState[action.player] = state[action.player];
             playerState[action.player].saved = state[action.player].saved + 1;
-            playerState[action.player].inGame = state[action.player].inGame - 1;
             return Object.assign({}, state, playerState);
 
         case CHANGE_STATE:

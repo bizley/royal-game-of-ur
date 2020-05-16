@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import './ur.css';
 import Roll from "./components/Roll";
 import Field from "./components/Field";
@@ -39,7 +39,9 @@ function App() {
                         <h2>IN GAME: {players.blue.inGame}</h2>
                         <h2>SAVED: {players.blue.saved}</h2>
                         {current === 'blue' ? <Roll/> : ''}
-                        <h3>{players.blue.info}</h3>
+                        <h3>{players.blue.info.split('|').map((item, key) => {
+                            return <Fragment key={key}>{item}<br/></Fragment>
+                        })}</h3>
                     </td>
                     <Field css="blue extra" id="c4" />
                     <Field id="c5" />
@@ -50,7 +52,9 @@ function App() {
                         <h2>IN GAME: {players.green.inGame}</h2>
                         <h2>SAVED: {players.green.saved}</h2>
                         {current === 'green' ? <Roll/> : ''}
-                        <h3>{players.green.info}</h3>
+                        <h3>{players.green.info.split('|').map((item, key) => {
+                            return <Fragment key={key}>{item}<br/></Fragment>
+                        })}</h3>
                     </td>
                 </tr>
                 <tr>
