@@ -35,6 +35,7 @@ function App() {
                 <tr>
                     <td className={'score' + (current === 'blue' ? ' current' : '')} rowSpan="8">
                         <h1>BLUE</h1>
+                        <h2>SPARE: {players.blue.spare}</h2>
                         <h2>IN GAME: {players.blue.inGame}</h2>
                         <h2>SAVED: {players.blue.saved}</h2>
                         {current === 'blue' ? <Roll/> : ''}
@@ -45,6 +46,7 @@ function App() {
                     <Field css="green extra" id="c-4" />
                     <td className={'score' + (current === 'green' ? ' current' : '')} rowSpan="8">
                         <h1>GREEN</h1>
+                        <h2>SPARE: {players.green.spare}</h2>
                         <h2>IN GAME: {players.green.inGame}</h2>
                         <h2>SAVED: {players.green.saved}</h2>
                         {current === 'green' ? <Roll/> : ''}

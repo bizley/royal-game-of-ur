@@ -6,7 +6,8 @@ export const SELECTS_PAWN = 'SELECTS_PAWN'
 const initialState = {
     blue: {
         saved: 0,
-        inGame: 7,
+        inGame: 0,
+        spare: 7,
         info: '',
         state: AWAITS_ROLL,
         moves: [],
@@ -14,7 +15,8 @@ const initialState = {
     },
     green: {
         saved: 0,
-        inGame: 7,
+        inGame: 0,
+        spare: 7,
         info: '',
         state: AWAITS_ROLL,
         moves: [],
@@ -29,6 +31,8 @@ const playersReducer = (state = initialState, action) => {
         case ADD_PAWN:
             playerState[action.player] = state[action.player];
             playerState[action.player].pawns.push(action.spot);
+            playerState[action.player].spare = state[action.player].spare - 1;
+            playerState[action.player].inGame = state[action.player].inGame + 1;
             return Object.assign({}, state, playerState);
 
         case SAVE:
@@ -68,6 +72,8 @@ const playersReducer = (state = initialState, action) => {
                 }
             })
             playerState[action.player].pawns = reducedPawns;
+            playerState[action.player].inGame = state[action.player].inGame - 1;
+            playerState[action.player].spare = state[action.player].spare + 1;
             return Object.assign({}, state, playerState);
 
         case INFO:
@@ -79,7 +85,8 @@ const playersReducer = (state = initialState, action) => {
             return {
                 blue: {
                     saved: 0,
-                    inGame: 7,
+                    inGame: 0,
+                    spare: 7,
                     info: '',
                     state: AWAITS_ROLL,
                     moves: [],
@@ -87,7 +94,8 @@ const playersReducer = (state = initialState, action) => {
                 },
                 green: {
                     saved: 0,
-                    inGame: 7,
+                    inGame: 0,
+                    spare: 7,
                     info: '',
                     state: AWAITS_ROLL,
                     moves: [],
