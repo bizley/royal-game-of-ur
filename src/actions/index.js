@@ -9,6 +9,8 @@ export const MOVE_PAWN = 'MOVE_PAWN'
 export const REMOVE_PAWN = 'REMOVE_PAWN'
 export const INFO = 'INFO'
 export const RESET = 'RESET'
+export const LIGHT_ON = 'LIGHT_ON'
+export const LIGHT_OFF = 'LIGHT_OFF'
 
 export const addPawn = (player, spot) => {
     return {type: ADD_PAWN, player, spot}
@@ -42,4 +44,10 @@ export const setInfo = (player, info) => {
 }
 export const reset = () => {
     return {type: RESET}
+}
+export const lightOn = (player, target) => {
+    return {type: LIGHT_ON, player, target}
+}
+export const lightOff = () => {
+    return {type: LIGHT_OFF}
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import Pawn from "./Pawn";
 import {useSelector, useDispatch} from "react-redux";
 import {SELECTS_PAWN, AWAITS_ROLL} from '../reducers/players'
-import {addPawn, changeState, movePawn, removePawn, resetRoll, save, setInfo} from "../actions";
+import {addPawn, changeState, movePawn, removePawn, resetRoll, save, setInfo, lightOn, lightOff} from "../actions";
 import {mapField, mapIndex, nextPlayer, resetGame} from "../App";
 
 const shiftPawn = (dispatch, players, player, from, to) => {
@@ -52,6 +52,7 @@ function Field(props) {
     const dispatch = useDispatch();
     const players = useSelector(state => state.players);
     const currentPlayer = useSelector(state => state.current);
+    const light = useSelector(state => state.light);
     const gameStateForCurrent = players[currentPlayer].state;
     const movesForCurrent = players[currentPlayer].moves;
     const movesFlattened = movesForCurrent.map(item => item.field);
@@ -70,6 +71,7 @@ function Field(props) {
     let content = '';
     let css = props.css;
     let clickable = null;
+    let hoverable = null;
     let target = null;
     if (props.content) {
         content = props.content;
@@ -77,6 +79,7 @@ function Field(props) {
             css += ' available'
             target = movesForCurrent.find(item => item.field === 0)
             clickable = () => plusPawn(dispatch, currentPlayer, target.target)
+            hoverable = () => dispatch(lightOn(currentPlayer, target.target))
         }
     } else if (currentPlayerPawn) {
         content = <Pawn player={currentPlayerPawn}/>;
@@ -84,16 +87,28 @@ function Field(props) {
         if (
             gameStateForCurrent === SELECTS_PAWN
             && movesFlattened.includes(mappedIndex)
-            && props.id === mapField(mappedIndex, currentPlayer)) {
+            && props.id === mapField(mappedIndex, currentPlayer)
+        ) {
             css += ' available'
             target = movesForCurrent.find(item => item.field === mapIndex(props.id))
             clickable = () => shiftPawn(dispatch, players, currentPlayer, props.id, target.target)
+            hoverable = () => dispatch(lightOn(currentPlayer, target.target))
         }
+        if (light && mapField(light.target, light.player) === props.id && currentPlayerPawn !== currentPlayer) {
+            css += ' conflict';
+        }
+    } else if (light && mapField(light.target, light.player) === props.id) {
+        css += ' target';
     }
 
     return (
         <>
-            <td className={css} id={props.id} onClick={clickable}>
+            <td
+                className={css}
+                id={props.id}
+                onClick={clickable}
+                onMouseOver={hoverable}
+                onMouseOut={() => dispatch(lightOff())}>
                 {content}
             </td>
         </>

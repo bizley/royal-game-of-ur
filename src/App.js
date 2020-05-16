@@ -78,9 +78,9 @@ function App() {
                     <Field css="empty" content="&uarr;" id="startGreen" />
                 </tr>
                 <tr>
-                    <Field css="empty" />
+                    <Field css="empty" id="c15" />
                     <Field id="c10" />
-                    <Field css="empty" />
+                    <Field css="empty" id="c-15" />
                 </tr>
                 <tr>
                     <Field css="blue" id="c14" />
