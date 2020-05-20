@@ -37,7 +37,7 @@ const analyseBoard = (dispatch, rollResult, players, currentPlayer) => {
     const otherPlayerPawns = mapIndexes(players[currentPlayer === 'blue' ? 'green' : 'blue'].pawns);
 
     let possibleMoves = [];
-    if (players[currentPlayer].spare > players[currentPlayer].pawns.length) {
+    if (players[currentPlayer].spare > 0) {
         currentPlayerPawns.push(0);
     }
 
