@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/royal-game-of-ur/static/css/main.77604feb.chunk.css",
-    "main.js": "/royal-game-of-ur/static/js/main.92f33089.chunk.js",
-    "main.js.map": "/royal-game-of-ur/static/js/main.92f33089.chunk.js.map",
-    "runtime-main.js": "/royal-game-of-ur/static/js/runtime-main.61d581ac.js",
-    "runtime-main.js.map": "/royal-game-of-ur/static/js/runtime-main.61d581ac.js.map",
-    "static/js/2.13e2900e.chunk.js": "/royal-game-of-ur/static/js/2.13e2900e.chunk.js",
-    "static/js/2.13e2900e.chunk.js.map": "/royal-game-of-ur/static/js/2.13e2900e.chunk.js.map",
+    "main.js": "/royal-game-of-ur/static/js/main.b8b40820.chunk.js",
+    "main.js.map": "/royal-game-of-ur/static/js/main.b8b40820.chunk.js.map",
+    "runtime-main.js": "/royal-game-of-ur/static/js/runtime-main.5e119040.js",
+    "runtime-main.js.map": "/royal-game-of-ur/static/js/runtime-main.5e119040.js.map",
+    "static/js/2.ed0fae4c.chunk.js": "/royal-game-of-ur/static/js/2.ed0fae4c.chunk.js",
+    "static/js/2.ed0fae4c.chunk.js.map": "/royal-game-of-ur/static/js/2.ed0fae4c.chunk.js.map",
     "index.html": "/royal-game-of-ur/index.html",
-    "precache-manifest.787d1b355b52bf390d8b923166c05f67.js": "/royal-game-of-ur/precache-manifest.787d1b355b52bf390d8b923166c05f67.js",
+    "precache-manifest.2aa29340026bc54bb206cdcbd2066367.js": "/royal-game-of-ur/precache-manifest.2aa29340026bc54bb206cdcbd2066367.js",
     "service-worker.js": "/royal-game-of-ur/service-worker.js",
     "static/css/main.77604feb.chunk.css.map": "/royal-game-of-ur/static/css/main.77604feb.chunk.css.map",
-    "static/js/2.13e2900e.chunk.js.LICENSE.txt": "/royal-game-of-ur/static/js/2.13e2900e.chunk.js.LICENSE.txt"
+    "static/js/2.ed0fae4c.chunk.js.LICENSE.txt": "/royal-game-of-ur/static/js/2.ed0fae4c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.61d581ac.js",
-    "static/js/2.13e2900e.chunk.js",
+    "static/js/runtime-main.5e119040.js",
+    "static/js/2.ed0fae4c.chunk.js",
     "static/css/main.77604feb.chunk.css",
-    "static/js/main.92f33089.chunk.js"
+    "static/js/main.b8b40820.chunk.js"
   ]
 }
